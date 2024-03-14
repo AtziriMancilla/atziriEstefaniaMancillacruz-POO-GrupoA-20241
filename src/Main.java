@@ -42,6 +42,7 @@ public class Main {
                     break;
                 case 10:
                     isc.devolverLibro();
+                    break;
                 case 11:
                     System.out.println("Gracias por usar la libreria");
                     band=false;

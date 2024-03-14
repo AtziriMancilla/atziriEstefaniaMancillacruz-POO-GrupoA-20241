@@ -90,6 +90,15 @@ public class Libreria {
             }
         }
     }
+    public int posicionLibro(Libro libro){
+        int pos=-1;
+        for(int i=0;i<libros.size();i++){
+            if(libro==libros.get(i)){
+                pos=i;
+            }
+        }
+        return pos;
+    }
     public void registrarLibro(){
         System.out.println("Ingrese el titulo: ");
         String titulo=sc.next();
@@ -120,20 +129,24 @@ public class Libreria {
         int opcionLib=sc.nextInt();
         opcionLib--;
         usuarios.get(opcionUs).getLibrosComprados().add(libros.get(opcionLib));
-        libros.remove(opcionLib);
+        Libro lib=usuarios.get(opcionUs).getLibrosComprados().get(opcionLib);
+        int pos=posicionLibro(lib);
+        libros.remove(pos);
+        System.out.println("Compra exitosa");
+        //libros.remove(opcionLib);
     }
     public void devolverLibro(){
         System.out.println("Seleccione el usuario: ");
         mostrarUsuarios();
         int opcionUs=sc.nextInt();
-        opcionUs--;
         System.out.println("Seleccione el libro: ");
-        rentadosPorUsuario(opcionUs--);
+        rentadosPorUsuario(opcionUs-1);
         int opcionLib=sc.nextInt();
-        opcionLib--;
-        usuarios.get(opcionUs).getLibrosRentados().remove(opcionLib);
-        libros.get(opcionLib).setDisponible(true);
-        System.out.printf("El usuario: %s ha devuelto: %s",usuarios.get(opcionUs).getNombre(),libros.get(opcionLib).getTitulo());
+        Libro lib=usuarios.get(opcionUs-1).getLibrosRentados().get(opcionLib-1);
+        usuarios.get(opcionUs-1).getLibrosRentados().remove(opcionLib-1);
+        int posLibro=posicionLibro(lib);
+        libros.get(posLibro).setDisponible(true);
+        System.out.printf("El usuario: %s ha devuelto: %s",usuarios.get(opcionUs-1).getNombre(),libros.get(posLibro).getTitulo());
     }
 }
 
