@@ -3,7 +3,8 @@ from Libreria import Libreria
 
 class Main:
     libreria = Libreria()
-    while True:
+    band=True
+    while band:
         print("\nMenu:\n1. Registrar usuario\n2. Mostrar usuarios\n3. Usuarios que han comprado\n4. Mostrar libros\n5. Mostrar libros disponibles\n6. Mostrar libros rentados\n7. Registrar libro\n8. Rentar libro\n9. Comprar libro\n10. Devolver libro\n11. Salir")
         opcion = int(input("Ingrese una opción: "))
         if opcion == 1:
@@ -28,3 +29,4 @@ class Main:
             libreria.devolver_libro()
         elif opcion==11:
             print("Gracias por usar la libreria")
+            band=False

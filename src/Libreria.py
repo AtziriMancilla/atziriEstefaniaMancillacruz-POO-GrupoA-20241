@@ -80,7 +80,7 @@ class Libreria:
 
     def rentar_libro(self):
         print("Seleccione el usuario: ")
-        self.mostrarUsuarios()
+        self.mostrar_usuarios()
         opcionUs = int(input()) - 1
         print("Seleccione el libro: ")
         self.mostrar_libros_disponibles()
@@ -98,7 +98,7 @@ class Libreria:
         opcionLib = int(input()) - 1
         self.usuarios[opcionUs].get_libros_comprados().append(self.libros[opcionLib])
         self.libros.pop(opcionLib)
-    """ """
+    
     def devolver_libro(self):
         print("Seleccione el usuario: ")
         self.mostrar_usuarios()
@@ -106,8 +106,11 @@ class Libreria:
         print("Seleccione el libro: ")
         self.mostrar_libros_rentados()
         opcionLib = int(input()) - 1
-        self.usuarios[opcionUs].get_libros_rentados().remove(self.libros[opcionLib])
-        self.libros[opcionLib].set_disponible(True)
+        lib=self.usuarios[opcionUs].get_libros_rentados()[opcionLib]
+        self.usuarios[opcionUs].get_libros_rentados().remove(lib)
+        pos_libro=self.posicion_libro(lib)
+        self.libros[pos_libro].set_disponible(True)
         print(f"El usuario: {self.usuarios[opcionUs].get_nombre()} ha devuelto: {self.libros[opcionLib].get_titulo()}")
+
 
 
