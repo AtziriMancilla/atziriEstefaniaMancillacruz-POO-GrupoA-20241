@@ -3,20 +3,20 @@ class Usuario:
         self.nombre = nombre
         self.apellido = apellido
         self.direccion = direccion
-        self.librosRentados = []
-        self.librosComprados = []
+        self.libros_rentados = []
+        self.libros_comprados = []
 
-    def getNombre(self):
+    def get_nombre(self):
         return self.nombre
 
-    def getApellido(self):
+    def get_apellido(self):
         return self.apellido
 
-    def getDireccion(self):
+    def get_direccion(self):
         return self.direccion
 
-    def getLibrosRentados(self):
-        return self.librosRentados
+    def get_libros_rentados(self):
+        return self.libros_rentados
 
-    def getLibrosComprados(self):
-        return self.librosComprados
+    def get_libros_comprados(self):
+        return self.libros_comprados

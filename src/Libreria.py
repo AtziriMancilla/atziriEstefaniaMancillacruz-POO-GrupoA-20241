@@ -7,7 +7,7 @@ class Libreria:
         self.usuarios = []
         self.libros = []
 
-    def registrarUsuario(self):
+    def registrar_usuario(self):
         print("Ingrese el nombre: ")
         nombre = input()
         print("Ingrese el apellido: ")
@@ -16,90 +16,98 @@ class Libreria:
         direccion = input()
         self.usuarios.append(Usuario(nombre, apellido, direccion))
 
-    def mostrarUsuarios(self):
+    def mostrar_usuarios(self):
         if not self.usuarios:
             print("No hay usuarios registrados")
         else:
             for i, usuario in enumerate(self.usuarios):
-                print(f"{i + 1} |Nombre: {usuario.getNombre()} Apellido: {usuario.getApellido()} Dirección: {usuario.getDireccion()}")
+                print(f"{i + 1} |Nombre: {usuario.get_nombre()} Apellido: {usuario.get_apellido()} Dirección: {usuario.get_direccion()}")
 
-    def usuariosQueHanComprado(self):
+    def usuarios_que_han_comprado(self):
         count = 0
         j=0
         for usuario in self.usuarios:
-            if usuario.getLibrosComprados():
-                print(f"{count + 1} |Nombre: {usuario.getNombre()} Apellido: {usuario.getApellido()} Dirección: {usuario.getDireccion()}")
+            if usuario.get_libros_comprados():
+                print(f"{count + 1} |Nombre: {usuario.get_nombre()} Apellido: {usuario.get_apellido()} Dirección: {usuario.get_direccion()}")
                 j += 1
             count+=1
         if j == 0:
             print("Ningún usuario ha comprado")
 
-    def mostrarLibros(self):
+    def mostrar_libros(self):
         if not self.libros:
             print("No hay libros registrados")
         else:
             for i, libro in enumerate(self.libros):
-                print(f"{i + 1} |Título: {libro.getTitulo()} Autor: {libro.getAutor()}")
+                print(f"{i + 1} |Título: {libro.get_titulo()} Autor: {libro.get_autor()}")
 
-    def mostrarLibrosDisponibles(self):
+    def mostrar_libros_disponibles(self):
         count = 0
         j=0
         for libro in self.libros:
-            if libro.isDisponible():
-                print(f"{count + 1} |Título: {libro.getTitulo()} Autor: {libro.getAutor()}")
+            if libro.esta_disponible():
+                print(f"{count + 1} |Título: {libro.get_titulo()} Autor: {libro.get_autor()}")
                 j += 1
             count+=1
         if j == 0:
             print("No hay libros disponibles")
 
-    def mostrarLibrosRentados(self):
+    def mostrar_libros_rentados(self):
         count = 0
         j=0
         for libro in self.libros:
-            if not libro.isDisponible():
-                print(f"{count + 1} |Título: {libro.getTitulo()} Autor: {libro.getAutor()}")
+            if not libro.esta_disponible():
+                print(f"{count + 1} |Título: {libro.get_titulo()} Autor: {libro.get_autor()}")
                 j += 1
             count += 1
         if j == 0:
             print("No hay libros rentados")
 
-    def registrarLibro(self):
+    def posicion_libro(self, lib):
+        pos = -1
+        for i in range(len(self.libros)):
+            if lib == self.libros[i]:
+                pos = i
+        return pos
+                
+        
+    def registrar_libro(self):
         print("Ingrese el título: ")
         titulo = input()
         print("Ingrese el autor: ")
         autor = input()
         self.libros.append(Libro(titulo, autor))
 
-    def rentarLibro(self):
+    def rentar_libro(self):
         print("Seleccione el usuario: ")
         self.mostrarUsuarios()
         opcionUs = int(input()) - 1
         print("Seleccione el libro: ")
-        self.mostrarLibrosDisponibles()
+        self.mostrar_libros_disponibles()
         opcionLib = int(input()) - 1
-        self.usuarios[opcionUs].getLibrosRentados().append(self.libros[opcionLib])
-        self.libros[opcionLib].setDisponible(False)
-        print(f"El usuario: {self.usuarios[opcionUs].getNombre()} ha rentado: {self.libros[opcionLib].getTitulo()}")
+        self.usuarios[opcionUs].get_libros_rentados().append(self.libros[opcionLib])
+        self.libros[opcionLib].set_disponible(False)
+        print(f"El usuario: {self.usuarios[opcionUs].get_nombre()} ha rentado: {self.libros[opcionLib].get_titulo()}")
 
-    def comprarLibro(self):
+    def comprar_libro(self):
         print("Seleccione el usuario: ")
-        self.mostrarUsuarios()
+        self.mostrar_usuarios()
         opcionUs = int(input()) - 1
         print("Seleccione el libro: ")
-        self.mostrarLibrosDisponibles()
+        self.mostrar_libros_disponibles()
         opcionLib = int(input()) - 1
-        self.usuarios[opcionUs].getLibrosComprados().append(self.libros[opcionLib])
+        self.usuarios[opcionUs].get_libros_comprados().append(self.libros[opcionLib])
         self.libros.pop(opcionLib)
-
-    def devolverLibro(self):
+    """ """
+    def devolver_libro(self):
         print("Seleccione el usuario: ")
-        self.mostrarUsuarios()
+        self.mostrar_usuarios()
         opcionUs = int(input()) - 1
         print("Seleccione el libro: ")
-        self.mostrarLibrosRentados()
+        self.mostrar_libros_rentados()
         opcionLib = int(input()) - 1
-        self.usuarios[opcionUs].getLibrosRentados().remove(self.libros[opcionLib])
-        self.libros[opcionLib].setDisponible(True)
-        print(f"El usuario: {self.usuarios[opcionUs].getNombre()} ha devuelto: {self.libros[opcionLib].getTitulo()}")
+        self.usuarios[opcionUs].get_libros_rentados().remove(self.libros[opcionLib])
+        self.libros[opcionLib].set_disponible(True)
+        print(f"El usuario: {self.usuarios[opcionUs].get_nombre()} ha devuelto: {self.libros[opcionLib].get_titulo()}")
 
 

@@ -4,14 +4,14 @@ class Libro:
         self.autor = autor
         self.disponible = True
 
-    def getTitulo(self):
+    def get_titulo(self):
         return self.titulo
 
-    def getAutor(self):
+    def get_autor(self):
         return self.autor
 
-    def isDisponible(self):
+    def esta_disponible(self):
         return self.disponible
 
-    def setDisponible(self, disponible):
+    def set_disponible(self, disponible):
         self.disponible = disponible
