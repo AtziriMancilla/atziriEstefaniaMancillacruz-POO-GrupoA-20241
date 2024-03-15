@@ -1,22 +1,22 @@
 class Usuario:
     def __init__(self, nombre, apellido, direccion):
-        self.nombre = nombre
-        self.apellido = apellido
-        self.direccion = direccion
-        self.libros_rentados = []
-        self.libros_comprados = []
+        self.__nombre = nombre
+        self.__apellido = apellido
+        self.__direccion = direccion
+        self.__libros_rentados = []
+        self.__libros_comprados = []
 
     def get_nombre(self):
-        return self.nombre
+        return self.__nombre
 
     def get_apellido(self):
-        return self.apellido
+        return self.__apellido
 
     def get_direccion(self):
-        return self.direccion
+        return self.__direccion
 
     def get_libros_rentados(self):
-        return self.libros_rentados
+        return self.__libros_rentados
 
     def get_libros_comprados(self):
-        return self.libros_comprados
+        return self.__libros_comprados
