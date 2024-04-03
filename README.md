@@ -21,3 +21,11 @@ El menú cuenta con 17 opciones que permiten:
 15) Consultar visitas: muestra una lista con visitas
 16) Consultar mantenimientos: muestra lista con los cuidados realizados
 0) Salir
+
+Integrantes:
+
+Atziri Estefania Mancilla Cruz
+
+Andrea Duran Martinez
+
+Jafet Santoyo Benitez
