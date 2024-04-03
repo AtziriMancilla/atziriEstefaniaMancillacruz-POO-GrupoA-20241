@@ -23,6 +23,9 @@ El menú cuenta con 17 opciones que permiten:
 0) Salir
 
 Intregrantes:
-Atziri Estefania Mancilla Cruz
-Andrea Duran Martinez
-Jafet Santoyo Benitez
+
+-Atziri Estefania Mancilla Cruz
+
+-Andrea Duran Martinez
+
+-Jafet Santoyo Benitez
