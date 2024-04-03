@@ -22,10 +22,7 @@ El menú cuenta con 17 opciones que permiten:
 16) Consultar mantenimientos: muestra lista con los cuidados realizados
 0) Salir
 
-Integrantes:
-
+#Integrantes:
 Atziri Estefania Mancilla Cruz
-
 Andrea Duran Martinez
-
 Jafet Santoyo Benitez
