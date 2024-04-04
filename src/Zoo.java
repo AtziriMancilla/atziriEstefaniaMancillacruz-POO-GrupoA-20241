@@ -391,8 +391,6 @@ public class Zoo {
                 guideToDelete--;
                 guides.remove(guideToDelete);
                 System.out.println("Empleado eliminado");
-                //segun yo solo se elimina de la lista guias y no afecta el que haya objetos creados con él.
-                //creo que de empleados no se debe eliminar porque borrarlo si afectaria el objeto visita
             }
             case 2 ->{//mostrar veterinarios
                 showVets();
@@ -428,13 +426,8 @@ public class Zoo {
     }
     public void deleteAnimal(){
         Scanner sc = new Scanner(System.in);
-        int i = 1;
         System.out.println("Selecciona el animal a eliminar:");
-        for(Animals animal:animals){
-            System.out.println(i+") "+animal.showAnimal());
-            i += 1;
-        }
-
+        showAnimals();
         int selection = sc.nextInt();
         selection -= 1;
         System.out.println("Seleccionaste: "+ animals.get(selection).showAnimal());
@@ -454,13 +447,8 @@ public class Zoo {
         Scanner sc = new Scanner(System.in);
         System.out.println("Seleccione el visitante que desea eliminar: ");
         showVisitors();
-        int visitorToDelete = sc.nextInt(); //el método showVisitors muestra a partir de 1. fíjate en eso si te causa problema
+        int visitorToDelete = sc.nextInt();
         visitorToDelete--;
-        //asegurarse que no haya un objeto visita con un solo visitante
-        //Andy Pregunta:¿Será buena idea que el visitor tenga un arraylist de sus visitas?
-        //no sé como filtrar en lista de visitas
-        //
-        // ya si no rompe relación
         visitors.remove(visitorToDelete);
     }
 
