@@ -335,16 +335,13 @@ class Zoo:
             print("\nEntrada no válida")
     
     def delete_animal(self):
-        i = 1
         print("\nSelecciona el animal a eliminar:")
-        for index, animal in enumerate(self.animals):
-            print(f"{i}) {animal.show_animal()}")
-            i += 1
+        self.show_animals()
         selection = int(input()) - 1
         print("\nSeleccionaste: " + self.__animals[selection].show_animal())
         confirmation = int(input("\n¿Estás seguro de que lo quieres eliminar?\n 1) Si 2) Cancelar\n"))
         if confirmation == 1:
-            del self.__animals[selection]
+            self.__animals.pop(selection)
             print("\nAnimal eliminado de la base de datos.")
         else:
             print("\nSe canceló su eliminación")

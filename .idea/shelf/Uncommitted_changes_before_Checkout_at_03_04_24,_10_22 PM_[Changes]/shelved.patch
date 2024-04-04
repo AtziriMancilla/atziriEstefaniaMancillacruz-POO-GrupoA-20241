@@ -1,0 +1,45 @@
+Index: src/MainMenu.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from Zoo import Zoo\nclass MainMenu:\n    password = \"uwu\"\n    print(\">>> Bienvenido al zoológico <<<\")\n    user_input = input(\"\\nIngrese contraseña: \")\n\n    if (user_input != password):\n        print(\"\\nContraseña inválida, intente más tarde\")\n    else:\n        zoo = Zoo()\n        flag = True\n        zoo.tester()\n        while flag:\n            print(\"\\n>>> Bienvenido al sistema <<<\")\n            print(\"\\n¿Qué acción desea realizar?\\n\"\n                  \"\\n1) Registrar empleado\\n\"\n                  \"2) Registrar visitante\\n\"\n                  \"3) Registrar visita\\n\"\n                  \"4) Registrar animal\\n\"\n                  \"5) Registrar mantenimiento\\n\"\n                  \"6) Modificar empleado\\n\"\n                  \"7) Modificar registro de animal\\n\"\n                  \"8) Modificar visitante\\n\"\n                  \"9) Eliminar empleado\\n\"\n                  \"10) Eliminar Animal\\n\"\n                  \"11) Eliminar visitante\\n\"\n                  \"12) Consultar empleados\\n\"\n                  \"13) Consultar animales\\n\"\n                  \"14) Consultar visitantes\\n\"\n                  \"15) Consultar visitas\\n\"\n                  \"16) Consultar mantenimientos\\n\"\n                  \"0) Salir\")\n            option = int(input(\"\\nIngrese una opcion: \"))\n            if(option == 1):\n                zoo.add_employee()\n            elif(option == 2):\n                zoo.add_visitors()\n            elif(option == 3):\n                zoo.add_visit()\n            elif(option == 4):\n                zoo.add_animal()\n            elif(option == 5):\n                zoo.add_care()\n            elif(option == 6):\n                zoo.modify_employee()\n            elif(option == 7):\n                zoo.modify_animal_register()\n            elif(option == 8):\n                zoo.modify_visitor()\n            elif(option == 9):\n                zoo.delete_employee()\n            elif(option == 10):\n                zoo.delete_animal()\n            elif(option == 11):\n                zoo.delete_visitor()\n            elif(option == 12):\n                zoo.show_employees()\n            elif(option == 13):\n                zoo.show_animals()\n            elif(option == 14):\n                zoo.show_visitors()\n            elif(option == 15):\n                zoo.show_visits()\n            elif(option == 16):\n                zoo.show_care_list()\n            elif(option == 0):\n                flag = False\n                print(\"\\nGracias por usar el zoologico\")\n\n    
+===================================================================
+diff --git a/src/MainMenu.py b/src/MainMenu.py
+--- a/src/MainMenu.py	
++++ b/src/MainMenu.py	
+@@ -66,5 +66,3 @@
+             elif(option == 0):
+                 flag = False
+                 print("\nGracias por usar el zoologico")
+-
+-    
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"97766cd7-cd23-495d-a8bf-38a8833aa796\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"tarea8/unidad2/python\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 4\n}</component>\n  <component name=\"ProjectId\" id=\"2cqhWfQbTJIJSXcpnKR2mYQ5jty\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;examen/unidad2/python&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/maceva/holita/POO/AtziriMancilla/src/Main.java&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"jdk-21.0.2-openjdk-21.0.2-4caba194b151-322ed176\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"97766cd7-cd23-495d-a8bf-38a8833aa796\" name=\"Changes\" comment=\"\" />\n      <created>1708845049678</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1708845049678</updated>\n      <workItem from=\"1708845051315\" duration=\"1945000\" />\n      <workItem from=\"1709083216869\" duration=\"2313000\" />\n      <workItem from=\"1710048387999\" duration=\"1815000\" />\n      <workItem from=\"1710379953804\" duration=\"904000\" />\n      <workItem from=\"1710384913147\" duration=\"2995000\" />\n      <workItem from=\"1710429319775\" duration=\"2407000\" />\n      <workItem from=\"1710431735144\" duration=\"134000\" />\n      <workItem from=\"1710438053015\" duration=\"194000\" />\n      <workItem from=\"1710464598912\" duration=\"1598000\" />\n      <workItem from=\"1710466415789\" duration=\"22000\" />\n      <workItem from=\"1710466439755\" duration=\"108000\" />\n      <workItem from=\"1710469335776\" duration=\"52000\" />\n      <workItem from=\"1712120662578\" duration=\"1616000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -60,6 +60,21 @@
+       <recent name="" />
+     </key>
+   </component>
++  <component name="RunManager">
++    <configuration default="true" type="JetRunConfigurationType">
++      <module name="AtziriMancilla" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <module name="AtziriMancilla" />
++      <option name="filePath" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
